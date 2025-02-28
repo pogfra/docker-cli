@@ -1,0 +1,5 @@
+#!/bin/bash
+# IMAGE=${DOCKER_CLI_PHP:=lazyteam/lazygit}
+# docker run -it --rm \
+# 	${IMAGE} "$@"
+	# -v ~/.config/lazygit:/.config/jesseduffield/lazygit \

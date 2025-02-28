@@ -1,0 +1,13 @@
+#!/bin/bash
+
+IMAGE=${DOCKER_CLI_NODE:=node:20-alpine}
+test -t 1 && USE_TTY="-t"
+[ $(pwd) != $HOME ] && VOLUME_HOME="-v $HOME:$HOME"
+
+docker run -i ${USE_TTY} --rm \
+  -v $(pwd):$(pwd) \
+  ${VOLUME_HOME} \
+  -w $(pwd) \
+  -u $(id -u):$(id -g) \
+  -p 3300:3000 \
+  ${IMAGE} node "$@"

@@ -1,0 +1,3 @@
+#!/bin/bash
+IMAGE=${DOCKER_CLI_COMPOSER:=nakabonne/ali}
+docker run -it --rm ${IMAGE} ali "$@"

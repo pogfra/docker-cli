@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IMAGE=${DOCKER_CLI_PHP:=php:cli}
+test -t 1 && USE_TTY="-t"
+
+docker run -i ${USE_TTY} --rm \
+  -v $(pwd):$(pwd) \
+  -v $HOME:$HOME:ro \
+  -w $(pwd) \
+  -u $(id -u):$(id -g) \
+  ${IMAGE} "$@"

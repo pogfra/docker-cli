@@ -1,0 +1,3 @@
+#!/bin/bash
+# remove all currently running processes on tcp:9003
+sudo lsof -ti tcp:9003 | xargs sudo kill -9
